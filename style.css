@@ -261,46 +261,43 @@ footer {
 /* ==========================
    Мобільна адаптація
 ========================== */
-@media (max-width: 480px), (max-width: 360px) {
-    /* Контейнер */
+@media (max-width: 420px) {
     .invitation { width: 100%; padding: 0; box-shadow: none; border-radius: 0; }
 
     /* HERO */
     .hero-content { padding: 100px 15px; }
-    h1 { font-size: 28px; line-height: 1.2; }
+    h1 { font-size: 26px; }
     h2 { font-size: 20px; }
-    .date .day-number { font-size: 20px; }
+    .date .day-number { font-size: 18px; }
 
     /* Invite Text */
     .invite-text { padding: 50px 15px 30px 15px; }
-    .invite-text::before { width: 80px; height: 80px; opacity: 0.2; }
+    .invite-text::before { width: 70px; height: 70px; opacity: 0.2; }
 
     /* Countdown */
-    .countdown { margin-top: -40px; padding: 15px; }
-    .countdown .time { gap: 8px; }
+    .countdown { margin-top: -30px; padding: 10px; }
+    .countdown .time { gap: 6px; }
     .countdown span { font-size: 16px; }
     .countdown small { font-size: 12px; }
 
     /* Бокові секції */
-    .calendar, .location, .timeline, .details, .wishes, footer { padding-left: 30px; padding-right: 30px; }
+    .calendar, .location, .timeline, .details, .wishes, footer { padding-left: 20px; padding-right: 20px; }
 
-    /* Бокові картинки */
     .calendar::before, .calendar::after,
     .location::before, .location::after,
     .timeline::before, .timeline::after,
     .details::before, .details::after,
     .wishes::before, .wishes::after,
-    footer::before, footer::after { width: 25px; }
+    footer::before, footer::after { width: 20px; }
 
-    /* Footer */
-    footer { font-size: 18px; z-index: 2; }
+    footer { font-size: 16px; z-index: 3; }
 
-    /* Location image */
-    .location-img { max-width: 130px; padding-left: 5px; padding-right: 5px; }
+    /* Location img */
+    .location-img { max-width: 120px; padding: 0 5px; }
 
-    /* Calendar внутрішня сітка */
+    /* Calendar */
     .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 2px; }
 
     /* Кнопки */
-    .btn { font-size: 12px; padding: 8px 16px; }
+    .btn { font-size: 12px; padding: 8px 14px; }
 }
