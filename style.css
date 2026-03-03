@@ -279,7 +279,6 @@ footer {
 ========================== */
 @media (max-width: 480px) {
 
-    /* Контейнер */
     body {
         padding: 0;
     }
@@ -293,60 +292,57 @@ footer {
 
     /* HERO */
     .hero-content {
-        padding: 120px 20px;
+        padding: 120px 15px;
     }
 
     h1 {
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 1.2;
     }
 
     h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
-    .date .day-number {
-        font-size: 26px;
-    }
+    .date .day-name { font-size: 16px; }
+    .date .day-number { font-size: 24px; }
+    .date .month-name { font-size: 16px; }
 
     /* Invite block */
     .invite-text {
-        padding: 60px 20px 40px 20px;
+        padding: 50px 15px 30px 15px;
     }
 
     .invite-text::before {
-        width: 180px;
-        height: 180px;
-        opacity: 0.25; /* щоб не забивала текст */
+        width: 120px;
+        height: 120px;
+        opacity: 0.2;
     }
 
     /* Countdown */
     .countdown {
-        padding: 20px;
+        padding: 15px;
+        margin-top: -60px;
     }
 
     .countdown .time {
-        gap: 15px;
+        gap: 10px;
     }
 
-    .countdown span {
-        font-size: 22px;
-    }
+    .countdown span { font-size: 20px; }
+    .countdown small { font-size: 12px; }
 
-    .countdown small {
-        font-size: 13px;
-    }
-
-    /* Бокові секції */
+    /* Секції з боковими картинками */
     .calendar,
     .location,
     .timeline,
     .details,
     .wishes,
     footer {
-        padding: 20px 55px;
+        padding: 15px 40px;
     }
 
-    /* Бокові фото зменшуємо */
+    /* Бокові фото */
     .calendar::before,
     .calendar::after,
     .location::before,
@@ -359,41 +355,42 @@ footer {
     .wishes::after,
     footer::before,
     footer::after {
-        width: 50px;
+        width: 40px;
     }
 
-    /* Footer вирівнюємо */
     footer::before {
-        width: 50px;
+        width: 40px;
         left: 0;
     }
 
     footer::after {
-        width: 50px;
+        width: 40px;
         right: 0;
     }
 
     footer {
-        font-size: 20px;
+        font-size: 18px;
+        z-index: 2;
+        position: relative;
     }
 
     /* Календар */
     .calendar .weekdays div,
     .calendar .dates div {
-        font-size: 13px;
-        padding: 4px;
+        font-size: 12px;
+        padding: 3px;
     }
 
     /* Location image */
     .location-img {
-        max-width: 150px;
-        padding-left: 10px;
-        padding-right: 10px;
+        max-width: 140px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     /* Кнопки */
     .btn {
-        font-size: 13px;
-        padding: 10px 20px;
+        font-size: 12px;
+        padding: 8px 18px;
     }
 }
