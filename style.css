@@ -15,8 +15,6 @@ body {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
-    position: relative;
-    z-index: 1;
 }
 
 /* ==========================
@@ -45,8 +43,14 @@ h1, h2 {
     color: #2f4f3f;
 }
 
-h1 { font-size: 42px; line-height: 1.2; }
-h2 { font-size: 32px; }
+h1 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 32px;
+}
 
 /* ==========================
    Дата
@@ -63,7 +67,7 @@ h2 { font-size: 32px; }
 .date .month-name { font-size: 20px; display: block; margin-top: 0; }
 
 /* ==========================
-   Invite Text з декоративною картинкою
+   Invite Text
 ========================== */
 .invite-text {
     position: relative;
@@ -90,7 +94,7 @@ h2 { font-size: 32px; }
 ========================== */
 .countdown {
     padding: 20px 25px;
-    margin-top: -90px;
+    margin-top: -90px;  
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -99,8 +103,8 @@ h2 { font-size: 32px; }
 
 .countdown .time {
     display: flex;
-    justify-content: space-around;
     gap: 10px;
+    justify-content: space-around;
 }
 
 .countdown .time div {
@@ -180,7 +184,7 @@ footer::after {
 .timeline::before { background-image: url("https://i.postimg.cc/131FRzLx/photo-5242437129202242593-w.jpg"); left: 0; }
 .details::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); left: 0; }
 .wishes::before { background-image: url("https://i.postimg.cc/131FRzLx/photo-5242437129202242593-w.jpg"); left: 0; }
-footer::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); width: 140px; left: 0; }
+footer::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); width: 140px; left: 0px; }
 
 /* Права картинка */
 .calendar::after { background-image: url("https://i.postimg.cc/52Wz9tDZ/photo-5242437129202242592-w.jpg"); right: 0; }
@@ -201,9 +205,7 @@ footer::after { background-image: url("https://i.postimg.cc/zGYhDf4s/photo-52424
     margin-top: 0;
 }
 
-.calendar .dates div {
-    padding: 6px;
-}
+.calendar .dates div { padding: 6px; }
 
 /* ==========================
    Highlight heart
@@ -254,56 +256,51 @@ footer {
     font-family: 'Marck Script', cursive;
     font-size: 24px;
     color: #2f4f3f;
-    z-index: 2;
 }
 
 /* ==========================
-   Мобільна адаптація (портретна)
+   Мобільна адаптація
 ========================== */
-@media (max-width: 480px) {
+@media (max-width: 480px), (max-width: 360px) {
+    /* Контейнер */
+    .invitation { width: 100%; padding: 0; box-shadow: none; border-radius: 0; }
 
-    .invitation {
-        width: 100%;
-        padding: 0 15px;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
+    /* HERO */
     .hero-content { padding: 100px 15px; }
-
     h1 { font-size: 28px; line-height: 1.2; }
-    h2 { font-size: 22px; }
+    h2 { font-size: 20px; }
+    .date .day-number { font-size: 20px; }
 
-    .date .day-number { font-size: 22px; }
-
+    /* Invite Text */
     .invite-text { padding: 50px 15px 30px 15px; }
     .invite-text::before { width: 80px; height: 80px; opacity: 0.2; }
 
+    /* Countdown */
     .countdown { margin-top: -40px; padding: 15px; }
-    .countdown .time { gap: 10px; }
-    .countdown span { font-size: 18px; }
+    .countdown .time { gap: 8px; }
+    .countdown span { font-size: 16px; }
     .countdown small { font-size: 12px; }
 
-    .calendar,
-    .location,
-    .timeline,
-    .details,
-    .wishes,
-    footer { padding: 15px 25px; }
+    /* Бокові секції */
+    .calendar, .location, .timeline, .details, .wishes, footer { padding-left: 30px; padding-right: 30px; }
 
-    /* Зменшення бокових картинок для портрету */
+    /* Бокові картинки */
     .calendar::before, .calendar::after,
     .location::before, .location::after,
     .timeline::before, .timeline::after,
     .details::before, .details::after,
     .wishes::before, .wishes::after,
-    footer::before, footer::after { width: 40px; }
+    footer::before, footer::after { width: 25px; }
 
-    footer { font-size: 18px; }
+    /* Footer */
+    footer { font-size: 18px; z-index: 2; }
 
-    .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 3px; }
+    /* Location image */
+    .location-img { max-width: 130px; padding-left: 5px; padding-right: 5px; }
 
-    .location-img { max-width: 140px; padding-left: 5px; padding-right: 5px; }
+    /* Calendar внутрішня сітка */
+    .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 2px; }
 
-    .btn { font-size: 12px; padding: 8px 18px; }
+    /* Кнопки */
+    .btn { font-size: 12px; padding: 8px 16px; }
 }
