@@ -15,6 +15,8 @@ body {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 /* ==========================
@@ -43,14 +45,8 @@ h1, h2 {
     color: #2f4f3f;
 }
 
-h1 {
-    font-size: 42px;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 32px;
-}
+h1 { font-size: 42px; line-height: 1.2; }
+h2 { font-size: 32px; }
 
 /* ==========================
    Дата
@@ -67,7 +63,7 @@ h2 {
 .date .month-name { font-size: 20px; display: block; margin-top: 0; }
 
 /* ==========================
-   Invite Text
+   Invite Text з декоративною картинкою
 ========================== */
 .invite-text {
     position: relative;
@@ -94,7 +90,7 @@ h2 {
 ========================== */
 .countdown {
     padding: 20px 25px;
-    margin-top: -90px;  
+    margin-top: -90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -103,8 +99,8 @@ h2 {
 
 .countdown .time {
     display: flex;
-    gap: 10px;
     justify-content: space-around;
+    gap: 10px;
 }
 
 .countdown .time div {
@@ -184,7 +180,7 @@ footer::after {
 .timeline::before { background-image: url("https://i.postimg.cc/131FRzLx/photo-5242437129202242593-w.jpg"); left: 0; }
 .details::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); left: 0; }
 .wishes::before { background-image: url("https://i.postimg.cc/131FRzLx/photo-5242437129202242593-w.jpg"); left: 0; }
-footer::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); width: 140px; left: 0px; }
+footer::before { background-image: url("https://i.postimg.cc/zGYhDf44/photo-5242437129202242594-w.jpg"); width: 140px; left: 0; }
 
 /* Права картинка */
 .calendar::after { background-image: url("https://i.postimg.cc/52Wz9tDZ/photo-5242437129202242592-w.jpg"); right: 0; }
@@ -205,7 +201,9 @@ footer::after { background-image: url("https://i.postimg.cc/zGYhDf4s/photo-52424
     margin-top: 0;
 }
 
-.calendar .dates div { padding: 6px; }
+.calendar .dates div {
+    padding: 6px;
+}
 
 /* ==========================
    Highlight heart
@@ -256,48 +254,56 @@ footer {
     font-family: 'Marck Script', cursive;
     font-size: 24px;
     color: #2f4f3f;
+    z-index: 2;
 }
 
 /* ==========================
-   Мобільна адаптація
+   Мобільна адаптація (портретна)
 ========================== */
-@media (max-width: 420px) {
-    .invitation { width: 100%; padding: 0; box-shadow: none; border-radius: 0; }
+@media (max-width: 480px) {
 
-    /* HERO */
+    .invitation {
+        width: 100%;
+        padding: 0 15px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
     .hero-content { padding: 100px 15px; }
-    h1 { font-size: 26px; }
-    h2 { font-size: 20px; }
-    .date .day-number { font-size: 18px; }
 
-    /* Invite Text */
+    h1 { font-size: 28px; line-height: 1.2; }
+    h2 { font-size: 22px; }
+
+    .date .day-number { font-size: 22px; }
+
     .invite-text { padding: 50px 15px 30px 15px; }
-    .invite-text::before { width: 70px; height: 70px; opacity: 0.2; }
+    .invite-text::before { width: 80px; height: 80px; opacity: 0.2; }
 
-    /* Countdown */
-    .countdown { margin-top: -30px; padding: 10px; }
-    .countdown .time { gap: 6px; }
-    .countdown span { font-size: 16px; }
+    .countdown { margin-top: -40px; padding: 15px; }
+    .countdown .time { gap: 10px; }
+    .countdown span { font-size: 18px; }
     .countdown small { font-size: 12px; }
 
-    /* Бокові секції */
-    .calendar, .location, .timeline, .details, .wishes, footer { padding-left: 20px; padding-right: 20px; }
+    .calendar,
+    .location,
+    .timeline,
+    .details,
+    .wishes,
+    footer { padding: 15px 25px; }
 
+    /* Зменшення бокових картинок для портрету */
     .calendar::before, .calendar::after,
     .location::before, .location::after,
     .timeline::before, .timeline::after,
     .details::before, .details::after,
     .wishes::before, .wishes::after,
-    footer::before, footer::after { width: 20px; }
+    footer::before, footer::after { width: 40px; }
 
-    footer { font-size: 16px; z-index: 3; }
+    footer { font-size: 18px; }
 
-    /* Location img */
-    .location-img { max-width: 120px; padding: 0 5px; }
+    .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 3px; }
 
-    /* Calendar */
-    .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 2px; }
+    .location-img { max-width: 140px; padding-left: 5px; padding-right: 5px; }
 
-    /* Кнопки */
-    .btn { font-size: 12px; padding: 8px 14px; }
+    .btn { font-size: 12px; padding: 8px 18px; }
 }
