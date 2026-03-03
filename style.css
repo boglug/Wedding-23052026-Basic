@@ -261,46 +261,132 @@ footer {
 /* ==========================
    Мобільна адаптація
 ========================== */
-@media (max-width: 480px), (max-width: 360px) {
+/* ==========================
+   Універсальна мобільна адаптація
+========================== */
+@media (max-width: 820px) {
+
     /* Контейнер */
-    .invitation { width: 100%; padding: 0; box-shadow: none; border-radius: 0; }
+    .invitation {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
 
     /* HERO */
-    .hero-content { padding: 100px 15px; }
+    .hero-content {
+        padding: 100px 15px;
+    }
     h1 { font-size: 28px; line-height: 1.2; }
     h2 { font-size: 20px; }
     .date .day-number { font-size: 20px; }
 
     /* Invite Text */
-    .invite-text { padding: 50px 15px 30px 15px; }
-    .invite-text::before { width: 80px; height: 80px; opacity: 0.2; }
+    .invite-text {
+        padding: 50px 15px 30px 15px;
+    }
+    .invite-text::before {
+        width: 80px;
+        height: 80px;
+        opacity: 0.2;
+    }
 
     /* Countdown */
-    .countdown { margin-top: -40px; padding: 15px; }
+    .countdown {
+        margin-top: -40px;
+        padding: 15px;
+    }
     .countdown .time { gap: 8px; }
     .countdown span { font-size: 16px; }
     .countdown small { font-size: 12px; }
 
-    /* Бокові секції */
-    .calendar, .location, .timeline, .details, .wishes, footer { padding-left: 30px; padding-right: 30px; }
+    /* ==========================
+       Відступи для всіх секцій з боковими картинками
+    ========================== */
+    .calendar,
+    .location,
+    .timeline,
+    .details,
+    .wishes,
+    footer {
+        padding-left: 60px; /* <-- збільшено, щоб ліві картинки не перекривали текст */
+        padding-right: 30px;
+    }
 
-    /* Бокові картинки */
-    .calendar::before, .calendar::after,
-    .location::before, .location::after,
-    .timeline::before, .timeline::after,
-    .details::before, .details::after,
-    .wishes::before, .wishes::after,
-    footer::before, footer::after { width: 25px; }
+    /* Бокові картинки вертикально центровані */
+    .calendar::before,
+    .calendar::after,
+    .location::before,
+    .location::after,
+    .timeline::before,
+    .timeline::after,
+    .details::before,
+    .details::after,
+    .wishes::before,
+    .wishes::after,
+    footer::before,
+    footer::after {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+    }
 
     /* Footer */
     footer { font-size: 18px; z-index: 2; }
+    footer::before { width: 40px; left: 0; }
+    footer::after { width: 40px; right: 0; }
 
     /* Location image */
-    .location-img { max-width: 130px; padding-left: 5px; padding-right: 5px; }
+    .location-img {
+        max-width: 140px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
     /* Calendar внутрішня сітка */
-    .calendar .weekdays div, .calendar .dates div { font-size: 12px; padding: 2px; }
+    .calendar .weekdays div,
+    .calendar .dates div {
+        font-size: 12px;
+        padding: 3px;
+    }
 
     /* Кнопки */
-    .btn { font-size: 12px; padding: 8px 16px; }
+    .btn {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+/* ==========================
+   Додатково: портрет/landscape для смартфонів
+========================== */
+@media (max-width: 480px) and (orientation: portrait),
+       (max-width: 600px) and (orientation: landscape) {
+
+    .calendar,
+    .location,
+    .timeline,
+    .details,
+    .wishes,
+    footer {
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+    .calendar::before,
+    .calendar::after,
+    .location::before,
+    .location::after,
+    .timeline::before,
+    .timeline::after,
+    .details::before,
+    .details::after,
+    .wishes::before,
+    .wishes::after,
+    footer::before,
+    footer::after {
+        width: 35px;
+    }
 }
