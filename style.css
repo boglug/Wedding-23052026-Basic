@@ -237,4 +237,54 @@ footer { font-family: 'Marck Script', cursive; padding: 20px 90px 20px 120px; fo
 
     .btn { font-size: 12px; padding: 8px 16px; }
 }
+#rotate-warning {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+
+.rotate-box {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+
+.rotate-box p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Іконка телефону */
+.phone {
+    width: 60px;
+    height: 100px;
+    border: 3px solid #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    position: relative;
+    animation: rotatePhone 2s infinite ease-in-out;
+}
+
+.screen {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    right: 8px;
+    bottom: 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* Анімація повороту */
+@keyframes rotatePhone {
+    0% { transform: rotate(0deg); }
+    40% { transform: rotate(90deg); }
+    60% { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+}
 
