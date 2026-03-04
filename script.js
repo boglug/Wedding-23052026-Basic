@@ -50,4 +50,20 @@ function generateCalendar() {
     }
 }
 
+function checkOrientation() {
+    const warning = document.getElementById("rotate-warning");
+
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+    if (isMobile && isPortrait) {
+        warning.style.display = "flex";
+    } else {
+        warning.style.display = "none";
+    }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("load", checkOrientation);
+
 generateCalendar();
