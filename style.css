@@ -237,11 +237,15 @@ footer { font-family: 'Marck Script', cursive; padding: 20px 90px 20px 120px; fo
 
     .btn { font-size: 12px; padding: 8px 16px; }
 }
+/* ==========================
+   ROTATE WARNING (FORCE LANDSCAPE)
+========================== */
+
 #rotate-warning {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.9);
-    display: none;
+    display: none; /* за замовчуванням не показуємо */
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -280,11 +284,10 @@ footer { font-family: 'Marck Script', cursive; padding: 20px 90px 20px 120px; fo
     border-radius: 8px;
 }
 
-/* Анімація повороту */
+/* Анімація повороту телефону */
 @keyframes rotatePhone {
     0% { transform: rotate(0deg); }
     40% { transform: rotate(90deg); }
     60% { transform: rotate(90deg); }
     100% { transform: rotate(0deg); }
 }
-
