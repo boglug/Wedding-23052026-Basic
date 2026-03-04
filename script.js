@@ -24,6 +24,7 @@ updateCountdown();
 // Calendar for May 2026
 function generateCalendar() {
     const container = document.getElementById("calendarDates");
+    if (!container) return;
     container.innerHTML = "";
 
     const firstDay = new Date(2026, 4, 1).getDay(); // 0 = неділя
@@ -49,21 +50,34 @@ function generateCalendar() {
     }
 }
 
-// Викликаємо календар на load
+// Викликаємо календар після завантаження
 window.addEventListener("load", generateCalendar);
 
 /* ==========================
-   FORCE LANDSCAPE MODE
+   FORCE LANDSCAPE MODE (тільки на мобільних)
 ========================== */
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function checkOrientation() {
     const rotateWarning = document.getElementById("rotate-warning");
+
+    if (!isMobile()) {
+        // Desktop: завжди ховаємо
+        if (rotateWarning) rotateWarning.style.display = "none";
+        document.body.style.overflow = "auto";
+        return;
+    }
+
+    // Мобільні пристрої
     if (window.innerHeight > window.innerWidth) {
         // Портрет — показуємо overlay
-        rotateWarning.style.display = "flex";
+        if (rotateWarning) rotateWarning.style.display = "flex";
         document.body.style.overflow = "hidden"; // блокуємо прокрутку
     } else {
         // Ландшафт — ховаємо overlay
-        rotateWarning.style.display = "none";
+        if (rotateWarning) rotateWarning.style.display = "none";
         document.body.style.overflow = "auto";
     }
 }
