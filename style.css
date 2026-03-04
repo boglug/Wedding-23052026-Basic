@@ -195,7 +195,7 @@ footer::after { background-image: url("https://i.postimg.cc/zGYhDf4s/photo-52424
 /* ==========================
    Footer стиль
 ========================== */
-footer { font-family: 'Marck Script', cursive; font-size: 24px; color: #2f4f3f; }
+footer { font-family: 'Marck Script', cursive; padding: 20px 90px 20px 120px; font-size: 24px; color: #2f4f3f; }
 
 /* ==========================
    Універсальна мобільна адаптація
@@ -237,3 +237,4 @@ footer { font-family: 'Marck Script', cursive; font-size: 24px; color: #2f4f3f; 
 
     .btn { font-size: 12px; padding: 8px 16px; }
 }
+
