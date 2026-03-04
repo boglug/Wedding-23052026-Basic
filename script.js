@@ -50,20 +50,33 @@ function generateCalendar() {
     }
 }
 
+/* ==========================
+   FORCE LANDSCAPE MODE
+========================== */
+
 function checkOrientation() {
     const warning = document.getElementById("rotate-warning");
+    if (!warning) return;
 
     const isMobile = window.matchMedia("(max-width: 900px)").matches;
     const isPortrait = window.matchMedia("(orientation: portrait)").matches;
 
+    // Якщо мобільний І портрет — блокуємо сайт
     if (isMobile && isPortrait) {
         warning.style.display = "flex";
+        document.body.style.overflow = "hidden"; // забороняємо скрол
     } else {
         warning.style.display = "none";
+        document.body.style.overflow = "auto";   // дозволяємо скрол
     }
 }
 
+// Слухачі подій
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+window.addEventListener("load", checkOrientation);
 window.addEventListener("resize", checkOrientation);
 window.addEventListener("load", checkOrientation);
 
 generateCalendar();
+
