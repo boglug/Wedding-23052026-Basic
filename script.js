@@ -53,30 +53,20 @@ function generateCalendar() {
 /* ==========================
    FORCE LANDSCAPE MODE
 ========================== */
-
 function checkOrientation() {
-    const warning = document.getElementById("rotate-warning");
-    if (!warning) return;
-
-    const isMobile = window.matchMedia("(max-width: 900px)").matches;
-    const isPortrait = window.matchMedia("(orientation: portrait)").matches;
-
-    // Якщо мобільний І портрет — блокуємо сайт
-    if (isMobile && isPortrait) {
-        warning.style.display = "flex";
-        document.body.style.overflow = "hidden"; // забороняємо скрол
+    const rotateWarning = document.getElementById("rotate-warning");
+    if (window.innerHeight > window.innerWidth) {
+        // Портрет
+        rotateWarning.style.display = "flex";
+        document.body.style.overflow = "hidden"; // блокуємо прокрутку
     } else {
-        warning.style.display = "none";
-        document.body.style.overflow = "auto";   // дозволяємо скрол
+        // Ландшафт
+        rotateWarning.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 }
 
-// Слухачі подій
+// Перевірка при завантаженні та зміні розміру/повороті
+window.addEventListener("load", checkOrientation);
 window.addEventListener("resize", checkOrientation);
 window.addEventListener("orientationchange", checkOrientation);
-window.addEventListener("load", checkOrientation);
-window.addEventListener("resize", checkOrientation);
-window.addEventListener("load", checkOrientation);
-
-generateCalendar();
-
