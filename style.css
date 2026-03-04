@@ -271,7 +271,9 @@ footer::after { background-image: url("https://i.postimg.cc/zGYhDf4s/photo-52424
 ========================== */
 footer {
     font-family: 'Marck Script', cursive;
-    font-size: 24px;
+    
+   font-size: 24px;
+   padding: 20px 95px 20px 120px;
     color: #2f4f3f;
 }
 
@@ -326,3 +328,4 @@ footer {
     60% { transform: rotate(90deg); }
     100% { transform: rotate(0deg); }
 }
+
