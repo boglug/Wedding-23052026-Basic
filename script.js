@@ -49,7 +49,7 @@ function generateCalendar() {
         container.appendChild(day);
     }
 }
-
+generateCalendar();
 // Викликаємо календар після завантаження
 window.addEventListener("load", generateCalendar);
 
@@ -86,3 +86,4 @@ function checkOrientation() {
 window.addEventListener("load", checkOrientation);
 window.addEventListener("resize", checkOrientation);
 window.addEventListener("orientationchange", checkOrientation);
+
