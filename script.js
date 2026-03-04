@@ -10,13 +10,12 @@ function updateCountdown() {
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     document.getElementById("days").innerText = days;
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
-  
-  document.getElementById("seconds").innerText = seconds;
+    document.getElementById("seconds").innerText = seconds;
 }
 
 setInterval(updateCountdown, 1000);
@@ -50,17 +49,20 @@ function generateCalendar() {
     }
 }
 
+// Викликаємо календар на load
+window.addEventListener("load", generateCalendar);
+
 /* ==========================
    FORCE LANDSCAPE MODE
 ========================== */
 function checkOrientation() {
     const rotateWarning = document.getElementById("rotate-warning");
     if (window.innerHeight > window.innerWidth) {
-        // Портрет
+        // Портрет — показуємо overlay
         rotateWarning.style.display = "flex";
         document.body.style.overflow = "hidden"; // блокуємо прокрутку
     } else {
-        // Ландшафт
+        // Ландшафт — ховаємо overlay
         rotateWarning.style.display = "none";
         document.body.style.overflow = "auto";
     }
